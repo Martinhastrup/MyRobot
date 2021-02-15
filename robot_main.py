@@ -37,7 +37,7 @@ if __name__ == "__main__":
     GPIO.setup(in3, GPIO.OUT)
     GPIO.setup(in4, GPIO.OUT)
     GPIO.setup(en1, GPIO.OUT)
-    GPIO.setup(en12 GPIO.OUT)
+    GPIO.setup(en2, GPIO.OUT)
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.LOW)
     GPIO.output(in3, GPIO.LOW)

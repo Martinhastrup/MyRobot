@@ -27,7 +27,8 @@ if __name__ == "__main__":
     in2 = 23
     in3 = 26
     in4 = 16
-    en = 25
+    en1 = 25
+    en2  = 6
     temp1 = 1
 
     GPIO.setmode(GPIO.BCM)
@@ -35,14 +36,17 @@ if __name__ == "__main__":
     GPIO.setup(in2, GPIO.OUT)
     GPIO.setup(in3, GPIO.OUT)
     GPIO.setup(in4, GPIO.OUT)
-    GPIO.setup(en, GPIO.OUT)
+    GPIO.setup(en1, GPIO.OUT)
+    GPIO.setup(en12 GPIO.OUT)
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.LOW)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.LOW)
-    p = GPIO.PWM(en, 100)
+    p1 = GPIO.PWM(en1, 100)
+    p2 = GPIO.PWM(en2, 100)
 
-    p.start(25)
+    p1.start(25)
+    p2.start(25)
     print("\n")
     print("The default speed & direction of motor is LOW & Forward.....")
     print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")

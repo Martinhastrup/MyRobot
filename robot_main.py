@@ -42,8 +42,8 @@ if __name__ == "__main__":
     GPIO.output(in2, GPIO.LOW)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.LOW)
-    p1 = GPIO.PWM(en1, 255)
-    p2 = GPIO.PWM(en2, 255)
+    p1 = GPIO.PWM(en1, 100)
+    p2 = GPIO.PWM(en2, 100)
 
     p1.start(25)
     p2.start(25)
@@ -56,12 +56,14 @@ if __name__ == "__main__":
     GPIO.output(in2, GPIO.LOW)
     GPIO.output(in3, GPIO.HIGH)
     GPIO.output(in4, GPIO.LOW)
+    GPIO.cleanup()
 
     sleep(5)
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.LOW)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.LOW)
+    GPIO.cleanup()
     """
     mode = GPIO.getmode()
 

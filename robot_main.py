@@ -45,9 +45,9 @@ if __name__ == "__main__":
     GPIO.output(in1, GPIO.HIGH)
     GPIO.output(in2, GPIO.LOW)
 
-    #sleep(2)
-    #GPIO.output(in1, GPIO.LOW)
-    #GPIO.output(in2, GPIO.LOW)
+    sleep(2)
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.LOW)
     """
     mode = GPIO.getmode()
 

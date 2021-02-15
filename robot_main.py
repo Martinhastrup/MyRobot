@@ -22,7 +22,7 @@ def reverse(x):
 
 
 if __name__ == "__main__":
-    """
+
     in1 = 24
     in2 = 23
     en = 25
@@ -51,8 +51,6 @@ if __name__ == "__main__":
     """
     mode = GPIO.getmode()
 
-    GPIO.cleanup()
-
     Forward = 24
     Backward = 23
 
@@ -64,5 +62,6 @@ if __name__ == "__main__":
         forward(5)
         reverse(5)
         GPIO.cleanup()
+    """
 
 

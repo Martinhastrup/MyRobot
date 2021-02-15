@@ -45,8 +45,8 @@ if __name__ == "__main__":
     p1 = GPIO.PWM(en1, 50)
     p2 = GPIO.PWM(en2, 50)
 
-    p1.start(25)
-    p2.start(25)
+    p1.start(50)
+    p2.start(50)
     print("\n")
     print("The default speed & direction of motor is LOW & Forward.....")
     print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
@@ -62,20 +62,6 @@ if __name__ == "__main__":
     GPIO.output(in2, GPIO.LOW)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.LOW)
-    """
-    mode = GPIO.getmode()
 
-    Forward = 24
-    Backward = 23
-
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(Forward, GPIO.OUT)
-    GPIO.setup(Backward, GPIO.OUT)
-
-    while 1:
-        forward(5)
-        reverse(5)
-        GPIO.cleanup()
-    """
 
 

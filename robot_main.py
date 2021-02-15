@@ -6,7 +6,23 @@ import numpy as np
 import RPi.GPIO as GPIO
 from time import sleep
 
+
+def forward(x):
+    GPIO.output(Forward, GPIO.HIGH)
+    print("Moving Forward")
+    sleep(2)
+    GPIO.output(Forward, GPIO.LOW)
+
+
+def reverse(x):
+    GPIO.output(Backward, GPIO.HIGH)
+    print("Moving Backward")
+    sleep(2)
+    GPIO.output(Backward, GPIO.LOW)
+
+
 if __name__ == "__main__":
+    """
     in1 = 24
     in2 = 23
     en = 25
@@ -26,9 +42,27 @@ if __name__ == "__main__":
     print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
     print("\n")
 
-    #GPIO.output(in1, GPIO.HIGH)
-    #GPIO.output(in2, GPIO.LOW)
+    GPIO.output(in1, GPIO.HIGH)
+    GPIO.output(in2, GPIO.LOW)
 
     #sleep(2)
     #GPIO.output(in1, GPIO.LOW)
     #GPIO.output(in2, GPIO.LOW)
+    """
+    mode = GPIO.getmode()
+
+    GPIO.cleanup()
+
+    Forward = 26
+    Backward = 20
+
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(Forward, GPIO.OUT)
+    GPIO.setup(Backward, GPIO.OUT)
+
+    while 1:
+        forward(5)
+        reverse(5)
+        GPIO.cleanup()
+
+

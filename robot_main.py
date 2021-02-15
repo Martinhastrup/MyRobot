@@ -53,8 +53,8 @@ if __name__ == "__main__":
 
     GPIO.cleanup()
 
-    Forward = 26
-    Backward = 20
+    Forward = 24
+    Backward = 23
 
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(Forward, GPIO.OUT)

@@ -56,14 +56,12 @@ if __name__ == "__main__":
     GPIO.output(in2, GPIO.LOW)
     GPIO.output(in3, GPIO.HIGH)
     GPIO.output(in4, GPIO.LOW)
-    GPIO.cleanup()
 
     sleep(5)
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.LOW)
     GPIO.output(in3, GPIO.LOW)
     GPIO.output(in4, GPIO.LOW)
-    GPIO.cleanup()
     """
     mode = GPIO.getmode()
 

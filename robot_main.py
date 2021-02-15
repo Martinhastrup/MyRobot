@@ -18,7 +18,7 @@ if __name__ == "__main__":
     GPIO.setup(en, GPIO.OUT)
     GPIO.output(in1, GPIO.LOW)
     GPIO.output(in2, GPIO.LOW)
-    p = GPIO.PWM(en, 1000)
+    p = GPIO.PWM(en, 100)
 
     p.start(25)
     print("\n")

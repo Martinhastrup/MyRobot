@@ -26,9 +26,9 @@ if __name__ == "__main__":
     print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
     print("\n")
 
-    GPIO.output(in1, GPIO.HIGH)
-    GPIO.output(in2, GPIO.LOW)
+    #GPIO.output(in1, GPIO.HIGH)
+    #GPIO.output(in2, GPIO.LOW)
 
-    sleep(2)
-    GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.LOW)
+    #sleep(2)
+    #GPIO.output(in1, GPIO.LOW)
+    #GPIO.output(in2, GPIO.LOW)

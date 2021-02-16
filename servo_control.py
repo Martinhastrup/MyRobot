@@ -1,3 +1,31 @@
+from adafruit_servokit import ServoKit
+
+from board import SCL, SDA
+import busio
+
+# Import the PCA9685 module.
+from adafruit_pca9685 import PCA9685
+
+# Create the I2C bus interface.
+i2c_bus = busio.I2C(SCL, SDA)
+
+# Create a simple PCA9685 class instance.
+pca = PCA9685(i2c_bus)
+
+kit = ServoKit(channels=16)
+
+# Create a simple PCA9685 class instance.
+pca = PCA9685(i2c_bus)
+pca.frequency = 50
+
+import adafruit_motor.servo
+servo = adafruit_motor.servo.Servo(servo_channel)
+
+kit.servo[0].angle = 90
+
+kit.servo[0].angle = 0
+
+"""
 # Import the PCA9685 module.
 import Adafruit_PCA9685
 import time
@@ -30,18 +58,4 @@ pwm.set_pwm(0, 0, 375)
 print('aaand back')
 pwm.set_pwm(1, 0, 275)
 pwm.set_pwm(1, 0, 375)
-"""
-print('Moving servo on channel 0, press Ctrl-C to quit...')
-while True:
-    # Move servo on channel O between extremes.
-    pwm.set_pwm(0, 0, servo_min)
-    time.sleep(2)
-    pwm.set_pwm(0, 0, servo_max)
-    time.sleep(2)
-
-    # Move servo on channel O between extremes.
-    pwm.set_pwm(1, 0, servo_min)
-    time.sleep(2)
-    pwm.set_pwm(1, 0, servo_max)
-    time.sleep(2)
 """

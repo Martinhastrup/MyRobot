@@ -21,9 +21,9 @@ pca.frequency = 50
 #import adafruit_motor.servo
 #servo = adafruit_motor.servo.Servo(servo_channel)
 
-kit.servo[0].angle = 90
-
 kit.servo[0].angle = 0
+
+kit.servo[0].angle = 90
 
 """
 # Import the PCA9685 module.

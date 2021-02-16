@@ -27,6 +27,7 @@ pwm.set_pwm_freq(60)
 
 pwm.set_pwm(0, 0, 275)
 pwm.set_pwm(0, 0, 375)
+print('aaand back')
 pwm.set_pwm(1, 0, 275)
 pwm.set_pwm(1, 0, 375)
 """

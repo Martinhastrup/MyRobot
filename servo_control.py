@@ -18,8 +18,8 @@ kit = ServoKit(channels=16)
 pca = PCA9685(i2c_bus)
 pca.frequency = 50
 
-import adafruit_motor.servo
-servo = adafruit_motor.servo.Servo(0)
+#import adafruit_motor.servo
+#servo = adafruit_motor.servo.Servo(servo_channel)
 
 kit.servo[0].angle = 90
 

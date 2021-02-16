@@ -22,6 +22,25 @@ def reverse(x):
     GPIO.output(in4, GPIO.HIGH)
     sleep(x)
 
+
+def right(x):
+    print('Turning right')
+    GPIO.output(in1, GPIO.HIGH)
+    GPIO.output(in2, GPIO.LOW)
+    GPIO.output(in3, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
+    sleep(x)
+
+
+def left(x):
+    print('Turning left')
+    GPIO.output(in1, GPIO.LOW)
+    GPIO.output(in2, GPIO.HIGH)
+    GPIO.output(in3, GPIO.HIGH)
+    GPIO.output(in4, GPIO.LOW)
+    sleep(x)
+
+
 def stop():
     print("Stopping")
     GPIO.output(in1, GPIO.LOW)
@@ -55,8 +74,10 @@ if __name__ == "__main__":
     print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
     print("\n")
 
-    reverse(2)
     forward(2)
+    right(1)
+    reverse(2)
+    left(1)
     stop()
 
 

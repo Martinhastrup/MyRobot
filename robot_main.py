@@ -75,9 +75,9 @@ if __name__ == "__main__":
     print("\n")
 
     forward(2)
-    right(0.5)
+    right(0.75)
     reverse(2)
-    left(0.5)
+    left(0.75)
     stop()
 
 

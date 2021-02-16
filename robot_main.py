@@ -50,16 +50,16 @@ if __name__ == "__main__":
     print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
     print("\n")
 
-    GPIO.output(in1, GPIO.HIGH)
-    GPIO.output(in2, GPIO.LOW)
-    GPIO.output(in3, GPIO.HIGH)
-    GPIO.output(in4, GPIO.LOW)
-
-    sleep(5)
+    GPIO.output(in2, GPIO.HIGH)
     GPIO.output(in1, GPIO.LOW)
-    GPIO.output(in2, GPIO.LOW)
+    GPIO.output(in4, GPIO.HIGH)
     GPIO.output(in3, GPIO.LOW)
+
+    sleep(4)
+    GPIO.output(in2, GPIO.LOW)
+    GPIO.output(in1, GPIO.LOW)
     GPIO.output(in4, GPIO.LOW)
+    GPIO.output(in3, GPIO.LOW)
 
 
 

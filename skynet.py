@@ -14,9 +14,6 @@ GPIO_ECHO = 27
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
 
-
-
-
 # Motor inputs
 M1_forward = 23
 M1_backward = 24
@@ -48,22 +45,22 @@ def distance():
     time.sleep(0.00001)
     GPIO.output(GPIO_TRIGGER, False)
 
-    StartTime = time.time()
-    StopTime = time.time()
+    startTime = time.time()
+    stopTime = time.time()
 
     # save StartTime
     while GPIO.input(GPIO_ECHO) == 0:
-        StartTime = time.time()
+        startTime = time.time()
 
     # save time of arrival
     while GPIO.input(GPIO_ECHO) == 1:
-        StopTime = time.time()
+        stopTime = time.time()
 
     # time difference between start and arrival
-    TimeElapsed = StopTime - StartTime
+    timeElapsed = stopTime - startTime
     # multiply with the sonic speed (34300 cm/s)
     # and divide by 2, because there and back
-    distance = (TimeElapsed * 34300) / 2
+    distance = (timeElapsed * 34300) / 2
 
     return distance
 
@@ -111,18 +108,34 @@ def stop():
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.LOW)
 
+
+def check_movement(mem):
+    sorted_mem = sorted(mem, reverse=True)
+    if mem != sorted_mem:
+        print(mem)
+        return False
+    else:
+        return True
+
+memory = []
+direction = ''
 # Your code to control the robot goes below this line
 try:
     while True:
         dist = distance()
-        if dist > 25:
+        memory.append(dist)
+        if check_movement(memory) and dist > 25:
+            direction = 'FORWARD'
             forward(0.1)
         else:
             print(dist)
+            direction = 'TURNING'
             if rand.randint(0, 1) == 0:
                 right(0.75)
             else:
                 left(0.75)
+        if len(memory) > 10:
+            memory = memory[-10:]
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
     print("Exiting")

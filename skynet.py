@@ -115,7 +115,7 @@ def stop():
 try:
     while True:
         dist = distance()
-        if dist > 15:
+        if dist > 25:
             forward(0.1)
         else:
             print(dist)

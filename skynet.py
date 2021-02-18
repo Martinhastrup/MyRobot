@@ -1,7 +1,10 @@
 import RPi.GPIO as GPIO
+from adafruit_servokit import ServoKit
 import time
 import random as rand
 
+# Servokit
+kit = ServoKit(channels=16)
 
 # GPIO Mode (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
@@ -133,6 +136,12 @@ def random_turn(x):
         left(x)
 
 
+def deploy_treats():
+    kit.servo[3].angle = 90
+    time.sleep(1)
+    kit.servo[3].angle = 160
+
+
 memory = []
 direction = ''
 # Your code to control the robot goes below this line
@@ -152,6 +161,8 @@ try:
             direction = 'TURNING'
             random_turn(0.80)
             memory = []
+        if rand.randint(0, 1000) == 0:
+            deploy_treats()
         if len(memory) > 10:
             memory = memory[-10:]
 # If you press CTRL+C, cleanup and stop

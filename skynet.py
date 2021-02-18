@@ -117,6 +117,7 @@ def check_movement(mem):
     else:
         return True
 
+
 memory = []
 direction = ''
 # Your code to control the robot goes below this line

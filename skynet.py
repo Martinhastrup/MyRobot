@@ -117,11 +117,20 @@ def check_movement(mem):
     try:
         current_distance = mem[-1]
         if mem[-1] > mem[-2] > mem[3]:
-            return False
+            return 'turn'
+        if int(mem[-1]) == mem[-2] == mem[-3]:
+            return 'reverse'
         else:
-            return True
+            return 'go straight'
     except:
-        return True
+        return 'go straight'
+
+
+def random_turn(x):
+    if rand.randint(0, 1) == 0:
+        right(x)
+    else:
+        left(x)
 
 
 memory = []
@@ -131,16 +140,17 @@ try:
     while True:
         dist = distance()
         memory.append(dist)
-        if check_movement(memory) and dist > 25:
+        if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'
             forward(0.1)
-        else:
+        elif check_movement(memory) == 'reverse':
+            reverse(0.75)
+            random_turn(0.80)
+            memory = []
+        elif check_movement(memory) == 'turn' or dist <= 25:
             print(dist)
             direction = 'TURNING'
-            if rand.randint(0, 1) == 0:
-                right(0.75)
-            else:
-                left(0.75)
+            random_turn(0.80)
             memory = []
         if len(memory) > 10:
             memory = memory[-10:]

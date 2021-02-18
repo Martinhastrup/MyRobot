@@ -135,6 +135,7 @@ try:
                 right(0.75)
             else:
                 left(0.75)
+            memory = []
         if len(memory) > 10:
             memory = memory[-10:]
 # If you press CTRL+C, cleanup and stop

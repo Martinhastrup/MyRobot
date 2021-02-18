@@ -5,11 +5,11 @@ kit = ServoKit(channels=16)
 
 kit.servo[3].angle = 0
 time.sleep(1)
-kit.servo[3].angle = 185
+kit.servo[3].angle = 180
 time.sleep(1)
 kit.servo[3].angle = 0
 time.sleep(1)
-kit.servo[3].angle = 185
+kit.servo[3].angle = 180
 time.sleep(1)
 
 """

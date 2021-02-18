@@ -3,7 +3,7 @@ import time
 
 kit = ServoKit(channels=16)
 
-kit.servo[3].angle = 175
+kit.servo[3].angle = 165
 time.sleep(1)
 #kit.servo[3].angle = 180
 

@@ -31,11 +31,11 @@ GPIO.setup(M2_forward, GPIO.OUT)
 GPIO.setup(M2_backward, GPIO.OUT)
 GPIO.setup(en1, GPIO.OUT)
 GPIO.setup(en2, GPIO.OUT)
-p1 = GPIO.PWM(en1, 50)
-p2 = GPIO.PWM(en2, 60)
+p1 = GPIO.PWM(en1, 60) # left wheel?
+p2 = GPIO.PWM(en2, 50) # right wheel?
 
-p1.start(50)
-p2.start(60)
+p1.start(60)
+p2.start(50)
 
 
 def distance():
@@ -156,4 +156,6 @@ try:
             memory = memory[-10:]
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
+    stop()
+    GPIO.cleanup()
     print("Exiting")

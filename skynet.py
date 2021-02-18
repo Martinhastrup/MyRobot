@@ -37,6 +37,7 @@ p2 = GPIO.PWM(en2, 50)
 p1.start(50)
 p2.start(50)
 
+
 def distance():
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, True)
@@ -60,9 +61,9 @@ def distance():
     timeElapsed = stopTime - startTime
     # multiply with the sonic speed (34300 cm/s)
     # and divide by 2, because there and back
-    distance = (timeElapsed * 34300) / 2
+    dist = (timeElapsed * 34300) / 2
 
-    return distance
+    return dist
 
 
 def forward(x):
@@ -110,11 +111,16 @@ def stop():
 
 
 def check_movement(mem):
-    sorted_mem = sorted(mem, reverse=True)
-    if mem != sorted_mem:
-        print(mem)
-        return False
-    else:
+    #sorted_mem = sorted(mem, reverse=True)
+    #if mem != sorted_mem:
+    #    print(mem)
+    try:
+        current_distance = mem[-1]
+        if mem[-1] > mem[-2] > mem[3]:
+            return False
+        else:
+            return True
+    except:
         return True
 
 

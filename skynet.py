@@ -161,7 +161,7 @@ try:
             direction = 'TURNING'
             random_turn(0.80)
             memory = []
-        if rand.randint(0, 1000) == 0:
+        if rand.randint(0, 250) == 0:
             deploy_treats()
         if len(memory) > 10:
             memory = memory[-10:]

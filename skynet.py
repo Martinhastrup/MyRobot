@@ -153,7 +153,7 @@ try:
             direction = 'FORWARD'
             forward(0.1)
         elif check_movement(memory) == 'reverse':
-            reverse(0.75)
+            reverse(1.50)
             random_turn(0.80)
             memory = []
         elif check_movement(memory) == 'turn' or dist <= 25:

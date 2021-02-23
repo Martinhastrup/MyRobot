@@ -9,10 +9,7 @@ try:
         time.sleep(2)
         GPIO.output(laser_out, GPIO.LOW)
         time.sleep(2)
-
-
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
-stop()
-GPIO.cleanup()
-print("Exiting")
+    GPIO.cleanup()
+    print("Exiting")

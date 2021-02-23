@@ -9,10 +9,10 @@ GPIO.setup(laser_out, GPIO.OUT)
 
 try:
     while True:
-        GPIO.output(laser_out, GPIO.HIGH)
+        GPIO.output(laser_out, True)
         print('Beam of Death ON')
         time.sleep(2)
-        GPIO.output(laser_out, GPIO.LOW)
+        GPIO.output(laser_out, False)
         print('Beam of Death OFF')
         time.sleep(2)
 # If you press CTRL+C, cleanup and stop

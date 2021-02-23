@@ -3,6 +3,10 @@ import time
 
 
 laser_out = 5
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(laser_out, GPIO.OUT)
+
 try:
     while True:
         GPIO.output(laser_out, GPIO.HIGH)

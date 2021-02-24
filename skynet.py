@@ -226,7 +226,7 @@ try:
             random_turn(0.80)
             memory = []
         if rand.randint(0, 20) == 0:
-            activate_LOD()
+            activate_lod()
         #    deploy_treats()
         if len(memory) > 10:
             memory = memory[-10:]

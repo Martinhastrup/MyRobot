@@ -11,38 +11,38 @@ GPIO.setup(laser_out, GPIO.OUT)
 
 
 def go_up_servo():
-    for i in range(45):
+    for i in range(30):
         kit.servo[1].angle = 45 - i
         time.sleep(0.05)
-    for i in range(45):
-        kit.servo[1].angle = i
+    for i in range(30):
+        kit.servo[1].angle = 15 + i
         time.sleep(0.05)
 
 
 def go_down_servo():
-    for i in range(45):
+    for i in range(30):
         kit.servo[1].angle = 45 + i
         time.sleep(0.05)
-    for i in range(45):
-        kit.servo[1].angle = 90 - i
+    for i in range(30):
+        kit.servo[1].angle = 75 - i
         time.sleep(0.05)
 
 
 def go_left_servo():
-    for i in range(45):
+    for i in range(30):
         kit.servo[0].angle = 90 + i
         time.sleep(0.05)
-    for i in range(45):
-        kit.servo[0].angle = 135 - i
+    for i in range(30):
+        kit.servo[0].angle = 120 - i
         time.sleep(0.05)
 
 
 def go_right_servo():
-    for i in range(45):
+    for i in range(30):
         kit.servo[0].angle = 90 - i
         time.sleep(0.05)
-    for i in range(45):
-        kit.servo[0].angle = 45 + i
+    for i in range(30):
+        kit.servo[0].angle = 60 + i
         time.sleep(0.05)
 
 
@@ -62,8 +62,8 @@ def activate_LOD():
             go_up_servo()
         if direction == 3:
             go_down_servo()
-        GPIO.output(laser_out, False)
-        reset_servo()
+    GPIO.output(laser_out, False)
+    reset_servo()
 
 
 activate_LOD()

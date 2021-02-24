@@ -136,6 +136,47 @@ def check_movement(mem):
         return 'go straight'
 
 
+def go_up_servo():
+    for i in range(45):
+        kit.servo[1].angle = 45 - i
+        time.sleep(0.05)
+    for i in range(45):
+        kit.servo[1].angle = i
+        time.sleep(0.05)
+
+
+def go_down_servo():
+    for i in range(45):
+        kit.servo[1].angle = 45 + i
+        time.sleep(0.05)
+    for i in range(45):
+        kit.servo[1].angle = 90 - i
+        time.sleep(0.05)
+
+
+def go_left_servo():
+    for i in range(45):
+        kit.servo[0].angle = 90 + i
+        time.sleep(0.05)
+    for i in range(45):
+        kit.servo[0].angle = 135 - i
+        time.sleep(0.05)
+
+
+def go_right_servo():
+    for i in range(45):
+        kit.servo[0].angle = 90 - i
+        time.sleep(0.05)
+    for i in range(45):
+        kit.servo[0].angle = 45 + i
+        time.sleep(0.05)
+
+
+def reset_servo():
+    kit.servo[0].angle = 90
+    kit.servo[1].angle = 45
+
+
 def random_turn(x):
     if rand.randint(0, 1) == 0:
         right(x)
@@ -147,6 +188,23 @@ def deploy_treats():
     kit.servo[3].angle = 90
     time.sleep(1)
     kit.servo[3].angle = 160
+
+
+def activate_LOD():
+    GPIO.output(laser_out, True)
+    for i in range(15):
+        direction = rand.randint(0, 3)
+        if direction == 0:
+            go_right_servo()
+        if direction == 1:
+            go_left_servo()
+        if direction == 2:
+            go_up_servo()
+        if direction == 3:
+            go_down_servo()
+        GPIO.output(laser_out, False)
+        reset_servo()
+
 
 
 memory = []

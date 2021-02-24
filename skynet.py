@@ -26,6 +26,13 @@ en1 = 25
 en2 = 6
 temp1 = 1
 
+# Configure Beam of Death
+laser_out = 5
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(laser_out, GPIO.OUT)
+
+
 # Setup motor
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(M1_forward, GPIO.OUT)
@@ -161,8 +168,8 @@ try:
             direction = 'TURNING'
             random_turn(0.80)
             memory = []
-        if rand.randint(0, 20) == 0:
-            deploy_treats()
+        #if rand.randint(0, 20) == 0:
+        #    deploy_treats()
         if len(memory) > 10:
             memory = memory[-10:]
 # If you press CTRL+C, cleanup and stop

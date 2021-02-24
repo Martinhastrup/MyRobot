@@ -3,34 +3,40 @@ import time
 
 kit = ServoKit(channels=16)
 
-#kit.servo[3].angle = 90
+
+def go_up():
+    for i in range(9):
+        kit.servo[1].angle = 45 - (i*5)
+        time.sleep(0.1)
+
+
+def go_down():
+    for i in range(9):
+        kit.servo[1].angle = 45 + (i*5)
+        time.sleep(0.1)
+
+
+def go_left():
+    for i in range(9):
+        kit.servo[0].angle = 45 + (i*5)
+        time.sleep(0.1)
+
+
+def go_right():
+    for i in range(9):
+        kit.servo[0].angle = 45 - (i*5)
+        time.sleep(0.1)
+
+#kit.servo[0].angle = 90
 #time.sleep(1)
-#kit.servo[3].angle = 160
+#kit.servo[0].angle = 0
+#time.sleep(1)
+#kit.servo[0].angle = 150
+#time.sleep(1)
+#kit.servo[0].angle = 60
+#time.sleep(1)
 
-
-
-kit.servo[1].angle = 0
-time.sleep(1)
-kit.servo[1].angle = 45
-time.sleep(1)
-kit.servo[1].angle = 0
-time.sleep(1)
-kit.servo[1].angle = 45
-time.sleep(1)
-kit.servo[0].angle = 90
-time.sleep(1)
-kit.servo[0].angle = 0
-time.sleep(1)
-kit.servo[0].angle = 180
-time.sleep(1)
-kit.servo[0].angle = 90
-time.sleep(1)
-
-kit.servo[1].angle = 0
-time.sleep(1)
-kit.servo[1].angle = 45
-time.sleep(1)
-kit.servo[1].angle = 0
-time.sleep(1)
-kit.servo[1].angle = 45
-time.sleep(1)
+go_left()
+go_right()
+go_up()
+go_down()

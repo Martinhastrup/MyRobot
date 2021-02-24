@@ -5,26 +5,26 @@ kit = ServoKit(channels=16)
 
 
 def go_up():
-    for i in range(18):
-        kit.servo[1].angle = 45 - (i*2)
+    for i in range(45):
+        kit.servo[1].angle = 45 - i
         time.sleep(0.05)
 
 
 def go_down():
-    for i in range(18):
-        kit.servo[1].angle = 45 + (i*2)
+    for i in range(45):
+        kit.servo[1].angle = 45 + i
         time.sleep(0.05)
 
 
 def go_left():
-    for i in range(18):
-        kit.servo[0].angle = 45 + (i*2)
+    for i in range(45):
+        kit.servo[0].angle = 90 + i
         time.sleep(0.05)
 
 
 def go_right():
-    for i in range(18):
-        kit.servo[0].angle = 45 - (i*2)
+    for i in range(45):
+        kit.servo[0].angle = 90 - i
         time.sleep(0.05)
 
 def reset():

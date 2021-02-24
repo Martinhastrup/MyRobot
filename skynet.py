@@ -193,14 +193,14 @@ def deploy_treats():
 def activate_lod():
     GPIO.output(laser_out, True)
     for i in range(6):
-        direction = rand.randint(0, 3)
+        direction = rand.randint(0, 2)
         if direction == 0:
             go_right_servo()
         if direction == 1:
             go_left_servo()
+        #if direction == 2:
+        #    go_up_servo()
         if direction == 2:
-            go_up_servo()
-        if direction == 3:
             go_down_servo()
     GPIO.output(laser_out, False)
     reset_servo()
@@ -217,15 +217,15 @@ try:
             direction = 'FORWARD'
             forward(0.1)
         elif check_movement(memory) == 'reverse':
-            reverse(1.50)
-            random_turn(0.80)
+            reverse(2.0)
+            random_turn(1.0)
             memory = []
         elif check_movement(memory) == 'turn' or dist <= 25:
             print(dist)
             direction = 'TURNING'
-            random_turn(0.80)
+            random_turn(1.0)
             memory = []
-        if rand.randint(0, 20) == 0:
+        if rand.randint(0, 25) == 0:
             activate_lod()
         #    deploy_treats()
         if len(memory) > 10:

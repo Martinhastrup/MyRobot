@@ -127,8 +127,10 @@ def check_movement(mem):
     try:
         current_distance = mem[-1]
         if mem[-1] > mem[-2] > mem[-3]:
+            print('here')
             return 'turn'
         if mem[-1] == mem[-2] == mem[-3]:
+            print('here1')
             return 'reverse'
         else:
             return 'go straight'
@@ -230,7 +232,7 @@ try:
             activate_lod(0.2)
         #   deploy_treats()
 
-        if len(memory) > 10:
+        if len(memory) > 4:
             memory = memory[-10:]
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:

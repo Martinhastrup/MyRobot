@@ -207,6 +207,8 @@ def activate_lod(x):
 
 memory = []
 direction = ''
+turn_time = 1.0
+reverse_time = 2.0
 try:
     while True:
         dist = int(sum([distance() for i in range(5)]) / 5)
@@ -215,12 +217,12 @@ try:
             direction = 'FORWARD'
             forward(0.1)
         elif check_movement(memory) == 'reverse':
-            reverse(3.0)
-            random_turn(2.0)
+            reverse(reverse_time)
+            random_turn(turn_time)
             memory = []
         elif check_movement(memory) == 'turn' or dist <= 25:
             direction = 'TURNING'
-            random_turn(2.0)
+            random_turn(turn_time)
         if rand.randint(0, 250) == 0:
             print('Exterminate!')
             stop()

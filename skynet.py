@@ -209,8 +209,9 @@ memory = []
 direction = ''
 turn_time = 1.0
 reverse_time = 2.0
+i = 0
 try:
-    while True:
+    while i < 1000:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
         if check_movement(memory) == 'go straight' and dist > 25:
@@ -228,11 +229,14 @@ try:
             stop()
             activate_lod(0.2)
         #   deploy_treats()
-
         if len(memory) > 4:
             memory = memory[-4:]
+        i += 1
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
     stop()
     GPIO.cleanup()
     print("Exiting")
+
+print('job done')
+quit()

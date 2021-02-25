@@ -127,7 +127,6 @@ def check_movement(mem):
         current_distance = mem[-1]
         if int(mem[-1]) > int(mem[-2]) > int(mem[-3]):
             return 'turn'
-        avg_distance = int((mem[-1] + mem[-2] + mem[-3]) / 3)
         if int(mem[-1]) == int(mem[-2]) == int(mem[-3]):
             return 'reverse'
         else:
@@ -210,7 +209,7 @@ memory = []
 direction = ''
 try:
     while True:
-        dist = distance()
+        dist = [distance() for i in range(5)] / 5
         memory.append(dist)
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'

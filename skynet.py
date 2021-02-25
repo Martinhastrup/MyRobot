@@ -225,7 +225,6 @@ try:
             print(dist)
             direction = 'TURNING'
             random_turn(1.25)
-            memory = []
         if rand.randint(0, 250) == 0:
             print('Exterminate!')
             stop()

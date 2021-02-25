@@ -35,7 +35,6 @@ laser_out = 5
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(laser_out, GPIO.OUT)
 
-
 # Setup motor
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(M1_forward, GPIO.OUT)
@@ -44,8 +43,8 @@ GPIO.setup(M2_forward, GPIO.OUT)
 GPIO.setup(M2_backward, GPIO.OUT)
 GPIO.setup(en1, GPIO.OUT)
 GPIO.setup(en2, GPIO.OUT)
-p1 = GPIO.PWM(en1, 60) # left wheel
-p2 = GPIO.PWM(en2, 70) # right wheel
+p1 = GPIO.PWM(en1, 60)  # left wheel
+p2 = GPIO.PWM(en2, 70)  # right wheel
 
 p1.start(60)
 p2.start(70)
@@ -124,14 +123,15 @@ def stop():
 
 
 def check_movement(mem):
-    #sorted_mem = sorted(mem, reverse=True)
-    #if mem != sorted_mem:
-    #    print(mem)
     try:
         current_distance = mem[-1]
-        if mem[-1] > mem[-2] > mem[-3]:
+        if int(mem[-1]) > int(mem[-2]) > int(mem[-3]):
             return 'turn'
-        if int(mem[-1]) == int(mem[-2]) == int(mem[-3]):
+        avg_distance = int((mem[-1] + mem[-2] + mem[-3]) / 3)
+        if ((avg_distance + 1 >= int(mem[-1]) >= avg_distance - 1)
+                and (avg_distance + 1 >= int(mem[-2]) >= avg_distance - 1)
+                and (avg_distance + 1 >= int(mem[-3]) >= avg_distance - 1)):
+            # if int(mem[-1]) == int(mem[-2]) == int(mem[-3]):
             return 'reverse'
         else:
             return 'go straight'
@@ -227,7 +227,8 @@ try:
             direction = 'TURNING'
             random_turn(1.25)
             memory = []
-        if rand.randint(0, 150) == 0:
+        if rand.randint(0, 250) == 0:
+            print('Exterminate!')
             stop()
             activate_lod(0.2)
         #   deploy_treats()

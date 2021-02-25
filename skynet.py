@@ -123,14 +123,11 @@ def stop():
 
 
 def check_movement(mem):
-    print(mem)
     try:
         current_distance = mem[-1]
         if mem[-1] > mem[-2] > mem[-3]:
-            print('here')
             return 'turn'
         if mem[-1] == mem[-2] == mem[-3]:
-            print('here1')
             return 'reverse'
         else:
             return 'go straight'

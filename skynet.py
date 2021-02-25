@@ -215,8 +215,6 @@ try:
     while True:
         dist = distance()
         memory.append(dist)
-        reverse(2)
-        """
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'
             forward(0.1)
@@ -233,7 +231,7 @@ try:
         #    stop()
         #    activate_lod(0.2)
         #   deploy_treats()
-        """
+
         if len(memory) > 10:
             memory = memory[-10:]
 # If you press CTRL+C, cleanup and stop

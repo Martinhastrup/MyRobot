@@ -128,10 +128,7 @@ def check_movement(mem):
         if int(mem[-1]) > int(mem[-2]) > int(mem[-3]):
             return 'turn'
         avg_distance = int((mem[-1] + mem[-2] + mem[-3]) / 3)
-        if ((avg_distance + 1 >= int(mem[-1]) >= avg_distance - 1)
-                and (avg_distance + 1 >= int(mem[-2]) >= avg_distance - 1)
-                and (avg_distance + 1 >= int(mem[-3]) >= avg_distance - 1)):
-            # if int(mem[-1]) == int(mem[-2]) == int(mem[-3]):
+        if int(mem[-1]) == int(mem[-2]) == int(mem[-3]):
             return 'reverse'
         else:
             return 'go straight'

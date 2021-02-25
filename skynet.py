@@ -211,7 +211,7 @@ turn_time = 1.0
 reverse_time = 2.0
 i = 0
 try:
-    while i < 100:
+    while i < 1000:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
         if check_movement(memory) == 'go straight' and dist > 25:

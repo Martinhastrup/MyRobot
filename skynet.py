@@ -209,7 +209,7 @@ memory = []
 direction = ''
 try:
     while True:
-        dist = sum([distance() for i in range(5)]) / 5
+        dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'

@@ -201,7 +201,7 @@ def activate_lod(x):
         #if direction == 2:
         #    go_up_servo(x)
         if direction == 2:
-            go_down_servo()x
+            go_down_servo(x)
     GPIO.output(laser_out, False)
     reset_servo()
 
@@ -227,7 +227,7 @@ try:
             memory = []
         if rand.randint(0, 25) == 0:
             activate_lod(0.2)
-        #    deploy_treats()
+        #   deploy_treats()
         if len(memory) > 10:
             memory = memory[-10:]
 # If you press CTRL+C, cleanup and stop

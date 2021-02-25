@@ -13,37 +13,37 @@ GPIO.setup(laser_out, GPIO.OUT)
 def go_up_servo():
     for i in range(30):
         kit.servo[1].angle = 45 - i
-        time.sleep(0.1)
+        time.sleep(0.2)
     for i in range(30):
         kit.servo[1].angle = 15 + i
-        time.sleep(0.1)
+        time.sleep(0.2)
 
 
 def go_down_servo():
     for i in range(30):
         kit.servo[1].angle = 45 + i
-        time.sleep(0.1)
+        time.sleep(0.2)
     for i in range(30):
         kit.servo[1].angle = 75 - i
-        time.sleep(0.1)
+        time.sleep(0.2)
 
 
 def go_left_servo():
     for i in range(30):
         kit.servo[0].angle = 90 + i
-        time.sleep(0.1)
+        time.sleep(0.2)
     for i in range(30):
         kit.servo[0].angle = 120 - i
-        time.sleep(0.1)
+        time.sleep(0.2)
 
 
 def go_right_servo():
     for i in range(30):
         kit.servo[0].angle = 90 - i
-        time.sleep(0.1)
+        time.sleep(0.2)
     for i in range(30):
         kit.servo[0].angle = 60 + i
-        time.sleep(0.1)
+        time.sleep(0.2)
 
 
 def reset_servo():

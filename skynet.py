@@ -136,40 +136,40 @@ def check_movement(mem):
         return 'go straight'
 
 
-def go_up_servo():
+def go_up_servo(x):
     for i in range(15):
         kit.servo[1].angle = 45 - i
-        time.sleep(0.05)
+        time.sleep(x)
     for i in range(15):
         kit.servo[1].angle = 30 + i
-        time.sleep(0.05)
+        time.sleep(x)
 
 
-def go_down_servo():
+def go_down_servo(x):
     for i in range(45):
         kit.servo[1].angle = 45 + i
-        time.sleep(0.05)
+        time.sleep(x)
     for i in range(45):
         kit.servo[1].angle = 75 - i
-        time.sleep(0.05)
+        time.sleep(x)
 
 
-def go_left_servo():
+def go_left_servo(x):
     for i in range(30):
         kit.servo[0].angle = 90 + i
-        time.sleep(0.05)
+        time.sleep(x)
     for i in range(30):
         kit.servo[0].angle = 120 - i
-        time.sleep(0.05)
+        time.sleep(x)
 
 
-def go_right_servo():
+def go_right_servo(x):
     for i in range(30):
         kit.servo[0].angle = 90 - i
-        time.sleep(0.05)
+        time.sleep(x)
     for i in range(30):
         kit.servo[0].angle = 60 + i
-        time.sleep(0.05)
+        time.sleep(x)
 
 
 def reset_servo():
@@ -190,18 +190,18 @@ def deploy_treats():
     kit.servo[3].angle = 160
 
 
-def activate_lod():
+def activate_lod(x):
     GPIO.output(laser_out, True)
     for i in range(6):
         direction = rand.randint(0, 2)
         if direction == 0:
-            go_right_servo()
+            go_right_servo(x)
         if direction == 1:
-            go_left_servo()
+            go_left_servo(x)
         #if direction == 2:
-        #    go_up_servo()
+        #    go_up_servo(x)
         if direction == 2:
-            go_down_servo()
+            go_down_servo()x
     GPIO.output(laser_out, False)
     reset_servo()
 
@@ -226,7 +226,7 @@ try:
             random_turn(1.0)
             memory = []
         if rand.randint(0, 25) == 0:
-            activate_lod()
+            activate_lod(0.2)
         #    deploy_treats()
         if len(memory) > 10:
             memory = memory[-10:]

@@ -3,6 +3,9 @@ from adafruit_servokit import ServoKit
 import time
 import random as rand
 
+# pi IP: 192.168.1.58
+# RUN ssh pi@192.168.1.58
+
 # Servokit
 kit = ServoKit(channels=16)
 
@@ -41,10 +44,10 @@ GPIO.setup(M2_forward, GPIO.OUT)
 GPIO.setup(M2_backward, GPIO.OUT)
 GPIO.setup(en1, GPIO.OUT)
 GPIO.setup(en2, GPIO.OUT)
-p1 = GPIO.PWM(en1, 50) # left wheel
+p1 = GPIO.PWM(en1, 60) # left wheel
 p2 = GPIO.PWM(en2, 60) # right wheel
 
-p1.start(50)
+p1.start(60)
 p2.start(60)
 
 
@@ -208,11 +211,12 @@ def activate_lod(x):
 
 memory = []
 direction = ''
-# Your code to control the robot goes below this line
 try:
     while True:
         dist = distance()
         memory.append(dist)
+        reverse(2)
+        """
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'
             forward(0.1)
@@ -229,6 +233,7 @@ try:
         #    stop()
         #    activate_lod(0.2)
         #   deploy_treats()
+        """
         if len(memory) > 10:
             memory = memory[-10:]
 # If you press CTRL+C, cleanup and stop

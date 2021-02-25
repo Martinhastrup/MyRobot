@@ -218,13 +218,13 @@ try:
             direction = 'FORWARD'
             forward(0.1)
         elif check_movement(memory) == 'reverse':
-            reverse(2.0)
-            random_turn(1.25)
+            reverse(3.0)
+            random_turn(2.0)
             memory = []
         elif check_movement(memory) == 'turn' or dist <= 25:
             print(dist)
             direction = 'TURNING'
-            random_turn(1.25)
+            random_turn(2.0)
         if rand.randint(0, 250) == 0:
             print('Exterminate!')
             stop()
@@ -232,7 +232,7 @@ try:
         #   deploy_treats()
 
         if len(memory) > 4:
-            memory = memory[-10:]
+            memory = memory[-4:]
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
     stop()

@@ -126,7 +126,7 @@ def check_movement(mem):
     #    print(mem)
     try:
         current_distance = mem[-1]
-        if mem[-1] > mem[-2] > mem[3]:
+        if mem[-1] > mem[-2] > mem[-3]:
             return 'turn'
         if int(mem[-1]) == int(mem[-2]) == int(mem[-3]):
             return 'reverse'

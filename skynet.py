@@ -42,10 +42,10 @@ GPIO.setup(M2_backward, GPIO.OUT)
 GPIO.setup(en1, GPIO.OUT)
 GPIO.setup(en2, GPIO.OUT)
 p1 = GPIO.PWM(en1, 60) # left wheel
-p2 = GPIO.PWM(en2, 58) # right wheel
+p2 = GPIO.PWM(en2, 56) # right wheel
 
 p1.start(60)
-p2.start(58)
+p2.start(56)
 
 
 def distance():
@@ -193,14 +193,14 @@ def deploy_treats():
 def activate_lod(x):
     GPIO.output(laser_out, True)
     for i in range(6):
-        direction = rand.randint(0, 2)
+        direction = rand.randint(0, 3)
         if direction == 0:
             go_right_servo(x)
         if direction == 1:
             go_left_servo(x)
-        #if direction == 2:
-        #    go_up_servo(x)
         if direction == 2:
+            go_down_servo(x)
+        if direction == 3:
             go_down_servo(x)
     GPIO.output(laser_out, False)
     reset_servo()

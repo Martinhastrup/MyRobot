@@ -41,11 +41,11 @@ GPIO.setup(M2_forward, GPIO.OUT)
 GPIO.setup(M2_backward, GPIO.OUT)
 GPIO.setup(en1, GPIO.OUT)
 GPIO.setup(en2, GPIO.OUT)
-p1 = GPIO.PWM(en1, 60) # left wheel
-p2 = GPIO.PWM(en2, 50) # right wheel
+p1 = GPIO.PWM(en1, 50) # left wheel
+p2 = GPIO.PWM(en2, 60) # right wheel
 
-p1.start(60)
-p2.start(50)
+p1.start(50)
+p2.start(60)
 
 
 def distance():
@@ -225,9 +225,9 @@ try:
             direction = 'TURNING'
             random_turn(1.0)
             memory = []
-        if rand.randint(0, 25) == 0:
-            stop()
-            activate_lod(0.2)
+        #if rand.randint(0, 25) == 0:
+        #    stop()
+        #    activate_lod(0.2)
         #   deploy_treats()
         if len(memory) > 10:
             memory = memory[-10:]

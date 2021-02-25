@@ -211,7 +211,7 @@ turn_time = 1.0
 reverse_time = 2.0
 i = 0
 try:
-    while i < 1000:
+    while i < 10:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
         if check_movement(memory) == 'go straight' and dist > 25:
@@ -219,7 +219,7 @@ try:
             forward(0.1)
         elif check_movement(memory) == 'reverse':
             reverse(reverse_time)
-            random_turn(turn_time)
+            random_turn(turn_time+1)
             memory = []
         elif check_movement(memory) == 'turn' or dist <= 25:
             direction = 'TURNING'

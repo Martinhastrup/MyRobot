@@ -220,16 +220,16 @@ try:
             forward(0.1)
         elif check_movement(memory) == 'reverse':
             reverse(2.0)
-            random_turn(1.0)
+            random_turn(1.25)
             memory = []
         elif check_movement(memory) == 'turn' or dist <= 25:
             print(dist)
             direction = 'TURNING'
-            random_turn(1.0)
+            random_turn(1.25)
             memory = []
-        #if rand.randint(0, 25) == 0:
-        #    stop()
-        #    activate_lod(0.2)
+        if rand.randint(0, 150) == 0:
+            stop()
+            activate_lod(0.2)
         #   deploy_treats()
 
         if len(memory) > 10:

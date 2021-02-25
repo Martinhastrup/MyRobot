@@ -215,7 +215,7 @@ try:
     while True:
         dist = distance()
         memory.append(dist)
-        reverse(2)
+        forward(2)
         """
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'

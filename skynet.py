@@ -214,9 +214,7 @@ try:
     while i < 1000:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
-        direction = 'FORWARD'
-        forward(0.1)
-        """
+
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'
             forward(0.1)
@@ -227,15 +225,15 @@ try:
         elif check_movement(memory) == 'turn' or dist <= 25:
             direction = 'TURNING'
             random_turn(turn_time)
-        if rand.randint(0, 250) == 0:
-            print('Exterminate!')
-            stop()
-            activate_lod(0.2)
+        #if rand.randint(0, 250) == 0:
+        #    print('Exterminate!')
+        #    stop()
+        #    activate_lod(0.2)
         #   deploy_treats()
         if len(memory) > 4:
             memory = memory[-4:]
         i += 1
-        """
+
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
     stop()

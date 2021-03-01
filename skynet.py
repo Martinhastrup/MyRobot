@@ -46,8 +46,8 @@ GPIO.setup(en2, GPIO.OUT)
 p1 = GPIO.PWM(en1, 100)  # right wheel
 p2 = GPIO.PWM(en2, 100)  # left wheel
 
-p1.start(25)
-p2.start(25)
+p1.start(65)
+p2.start(65)
 
 
 def distance():

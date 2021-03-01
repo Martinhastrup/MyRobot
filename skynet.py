@@ -218,6 +218,7 @@ try:
     while i < 1000:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
+        print(dist)
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'
             forward(0.1)

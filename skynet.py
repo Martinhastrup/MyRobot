@@ -44,10 +44,10 @@ GPIO.setup(M2_backward, GPIO.OUT)
 GPIO.setup(en1, GPIO.OUT)
 GPIO.setup(en2, GPIO.OUT)
 p1 = GPIO.PWM(en1, 100)  # left wheel
-p2 = GPIO.PWM(en2, 100)  # right wheel
+#p2 = GPIO.PWM(en2, 100)  # right wheel
 
 p1.start(100)
-p2.start(100)
+#p2.start(100)
 
 
 def distance():
@@ -217,7 +217,9 @@ try:
     while i < 1000:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
-
+        direction = 'FORWARD'
+        forward(0.1)
+        """
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'
             forward(0.1)
@@ -233,6 +235,7 @@ try:
         #    stop()
         #    activate_lod(0.2)
         #   deploy_treats()
+        """
         if len(memory) > 4:
             memory = memory[-4:]
         i += 1

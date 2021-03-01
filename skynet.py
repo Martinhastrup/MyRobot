@@ -177,13 +177,13 @@ def reset_servo():
 
 
 def random_turn(x):
-    decision = rand.randint(0, 1)
+    decision = rand.randint(0, 2)
     if decision == 0:
         right(x)
     if decision == 1:
         left(x)
-    #if decision == 2:
-    #    reverse(x)
+    if decision == 2:
+        reverse(x)
 
 
 def deploy_treats():

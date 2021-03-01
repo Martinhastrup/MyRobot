@@ -94,6 +94,7 @@ def reverse(x):
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.HIGH)
     time.sleep(x)
+    random_turn(x)
 
 
 def right(x):
@@ -222,7 +223,6 @@ try:
             forward(0.1)
         elif check_movement(memory) == 'reverse':
             reverse(reverse_time)
-            random_turn(turn_time+1)
             memory = []
         elif check_movement(memory) == 'turn' or dist <= 25:
             direction = 'TURNING'

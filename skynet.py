@@ -227,10 +227,10 @@ try:
         elif check_movement(memory) == 'turn' or dist <= 25:
             direction = 'TURNING'
             random_turn(turn_time)
-        #if rand.randint(0, 250) == 0:
-        #    print('Exterminate!')
-        #    stop()
-        #    activate_lod(0.2)
+        if rand.randint(0, 250) == 0:
+            print('Exterminate!')
+            stop()
+            activate_lod(0.2)
         #   deploy_treats()
         if len(memory) > 4:
             memory = memory[-4:]

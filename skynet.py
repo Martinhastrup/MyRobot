@@ -10,17 +10,6 @@ from datetime import datetime, timedelta
 # Servokit
 kit = ServoKit(channels=16)
 
-# GPIO Mode (BOARD / BCM)
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-
-# set GPIO Pins
-GPIO_TRIGGER = 22
-GPIO_ECHO = 27
-# set GPIO direction (IN / OUT)
-GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
-GPIO.setup(GPIO_ECHO, GPIO.IN)
-
 # Motor inputs
 M1_forward = 23
 M1_backward = 24
@@ -30,11 +19,6 @@ en1 = 25
 en2 = 6
 temp1 = 1
 
-# Configure Beam of Death
-laser_out = 5
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(laser_out, GPIO.OUT)
 
 #p1 = GPIO.PWM(en1, 100)  # right wheel
 #p2 = GPIO.PWM(en2, 100)  # left wheel
@@ -51,7 +35,23 @@ GPIO.setup(laser_out, GPIO.OUT)
 #p1.start(0)
 #p2.start(0)
 
+
 def init():
+    # GPIO Mode (BOARD / BCM)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+
+    # set GPIO Pins
+    GPIO_TRIGGER = 22
+    GPIO_ECHO = 27
+    # set GPIO direction (IN / OUT)
+    GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
+    GPIO.setup(GPIO_ECHO, GPIO.IN)
+    # Configure Beam of Death
+    laser_out = 5
+
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(laser_out, GPIO.OUT)
     # Setup motor
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(M1_forward, GPIO.OUT)

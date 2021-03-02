@@ -215,7 +215,7 @@ direction = ''
 turn_time = 1.0
 reverse_time = 2.0
 
-end_time = datetime.now() + timedelta(0, 60)
+end_time = datetime.now() + timedelta(0, 15)
 now = datetime.now()
 
 try:

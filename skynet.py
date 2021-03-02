@@ -142,7 +142,7 @@ def right(x):
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.HIGH)
     time.sleep(x)
-    #GPIO.cleanup()
+    GPIO.cleanup()
 
 
 def left(x):
@@ -152,6 +152,7 @@ def left(x):
     GPIO.output(M2_forward, GPIO.HIGH)
     GPIO.output(M2_backward, GPIO.LOW)
     time.sleep(x)
+    GPIO.cleanup()
 
 
 def stop():

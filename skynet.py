@@ -56,6 +56,7 @@ def init():
     # Configure Beam of Death
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(laser_out, GPIO.OUT)
+    GPIO.output(laser_out, False)
 
     # Setup motor
     GPIO.setmode(GPIO.BCM)
@@ -69,6 +70,7 @@ def init():
 
 def distance():
     # set Trigger to HIGH
+    init()
     GPIO.output(GPIO_TRIGGER, True)
 
     # set Trigger after 0.01ms to LOW
@@ -250,12 +252,11 @@ reverse_time = 2.0
 end_time = datetime.now() + timedelta(0, 15)
 now = datetime.now()
 init()
-GPIO.output(laser_out, False)
 
 try:
     while now <= end_time:
-        #dist = int(sum([distance() for i in range(5)]) / 5)
-        #memory.append(dist)
+        dist = int(sum([distance() for i in range(5)]) / 5)
+        memory.append(dist)
         right(2)
         """
         if check_movement(memory) == 'go straight' and dist > 25:

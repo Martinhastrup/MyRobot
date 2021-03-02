@@ -47,8 +47,8 @@ GPIO.setup(en2, GPIO.OUT)
 p1 = GPIO.PWM(en1, 1000)  # right wheel
 p2 = GPIO.PWM(en2, 1000)  # left wheel
 
-p1.start(100)
-p2.start(100)
+p1.start(0)
+p2.start(0)
 
 
 def distance():
@@ -100,8 +100,8 @@ def reverse(x):
 
 def right(x):
     print('Turning right')
-    p1.ChangeDutyCycle(100)
-    p2.ChangeDutyCycle(100)
+    p1.ChangeDutyCycle(50)
+    p2.ChangeDutyCycle(50)
     GPIO.output(M1_forward, GPIO.HIGH)
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.LOW)

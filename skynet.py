@@ -46,8 +46,8 @@ p2 = GPIO.PWM(en2, 100)  # left wheel
 #backward_M1.start(0)
 #forward_M2.start(0)
 #backward_M2.start(0)
-p1.start(80)
-p2.start(80)
+p1.start(100)
+p2.start(100)
 
 
 def init():

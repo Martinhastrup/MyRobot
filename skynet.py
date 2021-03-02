@@ -42,10 +42,6 @@ backward_M2 = GPIO.PWM(M2_backward, 100)
 p1 = GPIO.PWM(en1, 10)  # right wheel
 p2 = GPIO.PWM(en2, 10)  # left wheel
 
-forward_M1.start(100)
-backward_M1.start(0)
-forward_M2.start(0)
-backward_M2.start(100)
 p1.start(100)
 p2.start(100)
 
@@ -142,7 +138,7 @@ def right(x):
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.HIGH)
     time.sleep(x)
-    GPIO.cleanup()
+    #GPIO.cleanup()
 
 
 def left(x):
@@ -152,7 +148,7 @@ def left(x):
     GPIO.output(M2_forward, GPIO.HIGH)
     GPIO.output(M2_backward, GPIO.LOW)
     time.sleep(x)
-    GPIO.cleanup()
+    #GPIO.cleanup()
 
 
 def stop():

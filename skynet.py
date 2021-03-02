@@ -265,7 +265,8 @@ try:
         #dist = int(sum([distance() for i in range(5)]) / 5)
         #memory.append(dist)
         #forward(2)
-        right(2)
+        right(4)
+        left(4)
         """
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'

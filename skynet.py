@@ -28,16 +28,19 @@ en2 = 6
 temp1 = 1
 
 
-p1 = GPIO.PWM(en1, 100)  # right wheel
-p2 = GPIO.PWM(en2, 100)  # left wheel
+
 GPIO.setup(M1_forward, GPIO.OUT)
 GPIO.setup(M1_backward, GPIO.OUT)
 GPIO.setup(M2_forward, GPIO.OUT)
 GPIO.setup(M2_backward, GPIO.OUT)
+GPIO.setup(en1, GPIO.OUT)
+GPIO.setup(en2, GPIO.OUT)
 forward_M1 = GPIO.PWM(M1_forward, 100)
 backward_M1 = GPIO.PWM(M1_backward, 100)
 forward_M2 = GPIO.PWM(M2_forward, 100)
 backward_M2 = GPIO.PWM(M2_backward, 100)
+p1 = GPIO.PWM(en1, 100)  # right wheel
+p2 = GPIO.PWM(en2, 100)  # left wheel
 
 forward_M1.start(0)
 backward_M1.start(0)

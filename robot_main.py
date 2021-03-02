@@ -64,8 +64,8 @@ if __name__ == "__main__":
     GPIO.setup(in4, GPIO.OUT)
     GPIO.setup(en1, GPIO.OUT)
     GPIO.setup(en2, GPIO.OUT)
-    p1 = GPIO.PWM(en1, 50)
-    p2 = GPIO.PWM(en2, 50)
+    p1 = GPIO.PWM(en1, 100)
+    p2 = GPIO.PWM(en2, 100)
 
     p1.start(50)
     p2.start(50)

@@ -28,8 +28,8 @@ en2 = 6
 temp1 = 1
 
 
-#p1 = GPIO.PWM(en1, 100)  # right wheel
-#p2 = GPIO.PWM(en2, 100)  # left wheel
+p1 = GPIO.PWM(en1, 100)  # right wheel
+p2 = GPIO.PWM(en2, 100)  # left wheel
 GPIO.setup(M1_forward, GPIO.OUT)
 GPIO.setup(M1_backward, GPIO.OUT)
 GPIO.setup(M2_forward, GPIO.OUT)
@@ -43,8 +43,8 @@ forward_M1.start(0)
 backward_M1.start(0)
 forward_M2.start(0)
 backward_M2.start(0)
-#p1.start(0)
-#p2.start(0)
+p1.start(0)
+p2.start(0)
 
 
 def init():
@@ -125,8 +125,10 @@ def right(x):
     #GPIO.output(M1_backward, True)
     #GPIO.output(M2_forward, True)
     #GPIO.output(M2_backward, False)
+    p1.ChangeDutyCycle(80)
     forward_M1.ChangeDutyCycle(80)
     forward_M2.ChangeDutyCycle(0)
+    p2.ChangeDutyCycle(80)
     backward_M1.ChangeDutyCycle(0)
     backward_M2.ChangeDutyCycle(80)
     #GPIO.output(en1, GPIO.HIGH)

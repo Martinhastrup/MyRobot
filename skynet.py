@@ -43,8 +43,8 @@ p1 = GPIO.PWM(en1, 10)  # right wheel
 p2 = GPIO.PWM(en2, 10)  # left wheel
 
 forward_M1.start(100)
-backward_M1.start(100)
-forward_M2.start(100)
+backward_M1.start(0)
+forward_M2.start(0)
 backward_M2.start(100)
 p1.start(100)
 p2.start(100)

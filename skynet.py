@@ -248,6 +248,7 @@ reverse_time = 2.0
 
 end_time = datetime.now() + timedelta(0, 15)
 now = datetime.now()
+init()
 GPIO.output(laser_out, False)
 
 try:

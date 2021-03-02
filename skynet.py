@@ -44,8 +44,8 @@ GPIO.setup(M2_forward, GPIO.OUT)
 GPIO.setup(M2_backward, GPIO.OUT)
 GPIO.setup(en1, GPIO.OUT)
 GPIO.setup(en2, GPIO.OUT)
-p1 = GPIO.PWM(en1, 1000)  # right wheel
-p2 = GPIO.PWM(en2, 1000)  # left wheel
+p1 = GPIO.PWM(en1, 50)  # right wheel
+p2 = GPIO.PWM(en2, 50)  # left wheel
 
 p1.start(0)
 p2.start(0)

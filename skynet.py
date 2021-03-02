@@ -239,7 +239,7 @@ try:
         #   deploy_treats()
         if len(memory) > 4:
             memory = memory[-4:]
-    now = datetime.now()
+        now = datetime.now()
 
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:

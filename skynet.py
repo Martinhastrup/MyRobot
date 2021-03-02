@@ -123,7 +123,7 @@ def reverse(x):
 
 def right(x):
     print('Turning right')
-    init()
+    #init()
     #GPIO.output(M1_forward, False)
     #GPIO.output(M1_backward, True)
     #GPIO.output(M2_forward, True)
@@ -142,7 +142,7 @@ def right(x):
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.HIGH)
     time.sleep(x)
-    GPIO.cleanup()
+    #GPIO.cleanup()
 
 
 def left(x):

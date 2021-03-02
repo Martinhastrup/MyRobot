@@ -52,10 +52,11 @@ def init():
     # set GPIO direction (IN / OUT)
     GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
     GPIO.setup(GPIO_ECHO, GPIO.IN)
-    # Configure Beam of Death
 
+    # Configure Beam of Death
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(laser_out, GPIO.OUT)
+
     # Setup motor
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(M1_forward, GPIO.OUT)
@@ -253,8 +254,8 @@ GPIO.output(laser_out, False)
 
 try:
     while now <= end_time:
-        dist = int(sum([distance() for i in range(5)]) / 5)
-        memory.append(dist)
+        #dist = int(sum([distance() for i in range(5)]) / 5)
+        #memory.append(dist)
         right(2)
         """
         if check_movement(memory) == 'go straight' and dist > 25:

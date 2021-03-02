@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 from adafruit_servokit import ServoKit
 import time
 import random as rand
+from datetime import datetime, timedelta
 
 # pi IP: 192.168.1.58
 # RUN ssh pi@192.168.1.58
@@ -213,9 +214,12 @@ memory = []
 direction = ''
 turn_time = 1.0
 reverse_time = 2.0
-i = 0
+
+end_time = datetime.now() + timedelta(0, 60)
+now = datetime.now()
+
 try:
-    while i < 2500:
+    while now <= end_time:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
 
@@ -233,10 +237,9 @@ try:
             stop()
             activate_lod(0.2)
         #   deploy_treats()
-
         if len(memory) > 4:
             memory = memory[-4:]
-        i += 1
+    now = datetime.now()
 
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:

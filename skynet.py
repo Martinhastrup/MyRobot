@@ -47,8 +47,8 @@ GPIO.setup(en2, GPIO.OUT)
 p1 = GPIO.PWM(en1, 100)  # right wheel
 p2 = GPIO.PWM(en2, 100)  # left wheel
 
-p1.start(80)
-p2.start(80)
+p1.start(0)
+p2.start(0)
 
 
 def distance():
@@ -100,6 +100,8 @@ def reverse(x):
 
 def right(x):
     print('Turning right')
+    p1.ChangeDutyCycle(100)
+    p2.ChangeDutyCycle(100)
     GPIO.output(M1_forward, GPIO.HIGH)
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.LOW)
@@ -122,6 +124,8 @@ def stop():
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.LOW)
+    p1.ChangeDutyCycle(0)
+    p2.ChangeDutyCycle(0)
 
 
 def check_movement(mem):
@@ -223,7 +227,8 @@ try:
     while now <= end_time:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
-
+        right(2)
+        """
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'
             forward(0.1)
@@ -241,6 +246,7 @@ try:
         if len(memory) > 4:
             memory = memory[-4:]
         now = datetime.now()
+        """
 
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:

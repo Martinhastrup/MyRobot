@@ -58,12 +58,12 @@ def init():
     GPIO.output(laser_out, False)
 
     # Setup motor
-    GPIO.setup(M2_forward, GPIO.OUT)
-    GPIO.setup(M2_backward, GPIO.OUT)
     GPIO.setup(M1_forward, GPIO.OUT)
     GPIO.setup(M1_backward, GPIO.OUT)
-    # GPIO.setup(en1, GPIO.OUT)
-    # GPIO.setup(en2, GPIO.OUT)
+    GPIO.setup(M2_forward, GPIO.OUT)
+    GPIO.setup(M2_backward, GPIO.OUT)
+    GPIO.setup(en1, GPIO.OUT)
+    GPIO.setup(en2, GPIO.OUT)
 
 
 def distance():
@@ -117,10 +117,10 @@ def reverse(x):
 def right(x):
     print('Turning right')
     init()
-    GPIO.output(M2_forward, True)
-    GPIO.output(M2_backward, False)
     GPIO.output(M1_forward, False)
     GPIO.output(M1_backward, True)
+    GPIO.output(M2_forward, True)
+    GPIO.output(M2_backward, False)
     #forward_M1.ChangeDutyCycle(75)
     #forward_M2.ChangeDutyCycle(0)
     #backward_M1.ChangeDutyCycle(0)

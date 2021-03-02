@@ -44,11 +44,20 @@ GPIO.setup(M2_forward, GPIO.OUT)
 GPIO.setup(M2_backward, GPIO.OUT)
 GPIO.setup(en1, GPIO.OUT)
 GPIO.setup(en2, GPIO.OUT)
-p1 = GPIO.PWM(en1, 100)  # right wheel
-p2 = GPIO.PWM(en2, 100)  # left wheel
+#p1 = GPIO.PWM(en1, 100)  # right wheel
+#p2 = GPIO.PWM(en2, 100)  # left wheel
 
-p1.start(0)
-p2.start(0)
+forward_M1 = GPIO.PWM(M1_forward, 100)
+backward_M1 = GPIO.PWM(M1_backward, 100)
+forward_M2 = GPIO.PWM(M2_forward, 100)
+backward_M2 = GPIO.PWM(M2_backward, 100)
+
+forward_M1.start(0)
+backward_M1.start(0)
+forward_M2.start(0)
+backward_M2.start(0)
+#p1.start(0)
+#p2.start(0)
 
 
 def distance():
@@ -100,12 +109,17 @@ def reverse(x):
 
 def right(x):
     print('Turning right')
-    p1.ChangeDutyCycle(80)
-    p2.ChangeDutyCycle(80)
-    GPIO.output(M1_forward, GPIO.HIGH)
-    GPIO.output(M1_backward, GPIO.LOW)
-    GPIO.output(M2_forward, GPIO.LOW)
-    GPIO.output(M2_backward, GPIO.HIGH)
+    forward_M1.ChangeDutyCycle(80)
+    forward_M2.ChangeDutyCycle(0)
+    backward_M1.ChangeDutyCycle(0)
+    backward_M2.ChangeDutyCycle(80)
+    GPIO.output(en1, GPIO.HIGH)
+    GPIO.output(en2, GPIO.HIGH)
+    #p2.ChangeDutyCycle(80)
+    #GPIO.output(M1_forward, GPIO.HIGH)
+    #GPIO.output(M1_backward, GPIO.LOW)
+    #GPIO.output(M2_forward, GPIO.LOW)
+    #GPIO.output(M2_backward, GPIO.HIGH)
     time.sleep(x)
 
 

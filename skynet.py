@@ -217,6 +217,7 @@ reverse_time = 2.0
 
 end_time = datetime.now() + timedelta(0, 15)
 now = datetime.now()
+GPIO.output(laser_out, False)
 
 try:
     while now <= end_time:

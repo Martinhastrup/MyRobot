@@ -109,10 +109,10 @@ def reverse(x):
 
 def right(x):
     print('Turning right')
-    forward_M1.ChangeDutyCycle(100)
+    forward_M1.ChangeDutyCycle(75)
     forward_M2.ChangeDutyCycle(0)
     backward_M1.ChangeDutyCycle(0)
-    backward_M2.ChangeDutyCycle(100)
+    backward_M2.ChangeDutyCycle(75)
     GPIO.output(en1, GPIO.HIGH)
     GPIO.output(en2, GPIO.HIGH)
     #p2.ChangeDutyCycle(80)

@@ -97,6 +97,7 @@ def distance():
 
 def forward(x):
     print("Moving Forward")
+    init()
     GPIO.output(M1_forward, GPIO.HIGH)
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.HIGH)

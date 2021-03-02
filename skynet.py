@@ -7,6 +7,14 @@ from datetime import datetime, timedelta
 # pi IP: 192.168.1.58
 # RUN ssh pi@192.168.1.58
 
+# Distance
+# set GPIO Pins
+GPIO_TRIGGER = 22
+GPIO_ECHO = 27
+
+# Configure Beam of Death
+laser_out = 5
+
 # Servokit
 kit = ServoKit(channels=16)
 
@@ -41,14 +49,10 @@ def init():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
 
-    # set GPIO Pins
-    GPIO_TRIGGER = 22
-    GPIO_ECHO = 27
     # set GPIO direction (IN / OUT)
     GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
     GPIO.setup(GPIO_ECHO, GPIO.IN)
     # Configure Beam of Death
-    laser_out = 5
 
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(laser_out, GPIO.OUT)

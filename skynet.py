@@ -62,8 +62,8 @@ def init():
     GPIO.setup(M1_backward, GPIO.OUT)
     GPIO.setup(M2_forward, GPIO.OUT)
     GPIO.setup(M2_backward, GPIO.OUT)
-    GPIO.setup(en1, GPIO.OUT)
-    GPIO.setup(en2, GPIO.OUT)
+    #GPIO.setup(en1, GPIO.OUT)
+    #GPIO.setup(en2, GPIO.OUT)
 
 
 def distance():

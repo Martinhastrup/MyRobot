@@ -67,8 +67,8 @@ if __name__ == "__main__":
     p1 = GPIO.PWM(en1, 100)
     p2 = GPIO.PWM(en2, 100)
 
-    p1.start(50)
-    p2.start(50)
+    p1.start(80)
+    p2.start(80)
     print("\n")
     print("The default speed & direction of motor is LOW & Forward.....")
     print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")

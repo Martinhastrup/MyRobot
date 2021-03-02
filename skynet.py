@@ -100,8 +100,8 @@ def forward(x):
     init()
     GPIO.output(M1_forward, GPIO.HIGH)
     GPIO.output(M1_backward, GPIO.LOW)
-    #GPIO.output(M2_forward, GPIO.HIGH)
-    #GPIO.output(M2_backward, GPIO.LOW)
+    GPIO.output(M2_forward, GPIO.HIGH)
+    GPIO.output(M2_backward, GPIO.LOW)
     time.sleep(x)
 
 

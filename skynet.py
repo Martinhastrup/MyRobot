@@ -109,10 +109,10 @@ def reverse(x):
 
 def right(x):
     print('Turning right')
-    forward_M1.ChangeDutyCycle(80)
+    forward_M1.ChangeDutyCycle(100)
     forward_M2.ChangeDutyCycle(0)
     backward_M1.ChangeDutyCycle(0)
-    backward_M2.ChangeDutyCycle(80)
+    backward_M2.ChangeDutyCycle(100)
     GPIO.output(en1, GPIO.HIGH)
     GPIO.output(en2, GPIO.HIGH)
     #p2.ChangeDutyCycle(80)
@@ -138,9 +138,10 @@ def stop():
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.LOW)
-    p1.ChangeDutyCycle(0)
-    p2.ChangeDutyCycle(0)
-
+    forward_M1.ChangeDutyCycle(0)
+    forward_M2.ChangeDutyCycle(0)
+    backward_M1.ChangeDutyCycle(0)
+    backward_M2.ChangeDutyCycle(0)
 
 def check_movement(mem):
     try:

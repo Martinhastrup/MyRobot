@@ -74,10 +74,10 @@ if __name__ == "__main__":
     print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
     print("\n")
 
-    #forward(1)
-    right(2)
+    forward(10)
+    #right(2)
     #reverse(2)
-    left(2)
+    #left(2)
     stop()
 
 

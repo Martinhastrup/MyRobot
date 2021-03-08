@@ -250,7 +250,7 @@ def activate_lod(x):
 
 memory = []
 direction = ''
-turn_time = 1.0
+turn_time = 2.0
 reverse_time = 2.0
 
 end_time = datetime.now() + timedelta(0, 15)

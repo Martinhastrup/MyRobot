@@ -262,7 +262,6 @@ try:
         #dist = int(sum([distance() for i in range(5)]) / 5)
         #memory.append(dist)
         #forward(2)
-        forward(2)
         right(4)
         left(4)
         """

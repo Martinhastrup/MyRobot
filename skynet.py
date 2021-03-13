@@ -263,8 +263,8 @@ try:
         memory.append(dist)
         forward(1)
         reverse(1)
-        left(2)
-        right(2)
+        left(1)
+        right(1)
         #random_turn(turn_time)
         #activate_lod(0.2)
         """

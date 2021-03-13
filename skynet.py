@@ -262,8 +262,8 @@ try:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
         forward(1)
-        random_turn(turn_time)
-        activate_lod(0.2)
+        #random_turn(turn_time)
+        #activate_lod(0.2)
         """
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'

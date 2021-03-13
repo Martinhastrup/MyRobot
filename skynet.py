@@ -19,10 +19,10 @@ laser_out = 5
 kit = ServoKit(channels=16)
 
 # Motor inputs
-M1_forward = 23
-M1_backward = 24
-M2_forward = 16
-M2_backward = 26
+M1_forward = 24
+M1_backward = 23
+M2_forward = 26
+M2_backward = 16
 en1 = 25
 en2 = 6
 temp1 = 1

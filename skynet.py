@@ -261,7 +261,10 @@ try:
     while now <= end_time:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
-        forward(1)
+        forward(0.5)
+        reverse(0.5)
+        left(2)
+        right(2)
         #random_turn(turn_time)
         #activate_lod(0.2)
         """

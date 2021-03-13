@@ -261,7 +261,10 @@ try:
     while now <= end_time:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
-
+        forward(1)
+        random_turn(turn_time)
+        activate_lod(0.2)
+        """
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'
             forward(0.1)
@@ -279,6 +282,7 @@ try:
         if len(memory) > 4:
             memory = memory[-4:]
         now = datetime.now()
+        """
 
 
 # If you press CTRL+C, cleanup and stop

@@ -146,7 +146,7 @@ def stop():
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.LOW)
-    GPIO.cleanup()
+    #GPIO.cleanup()
 
 
 def check_movement(mem):

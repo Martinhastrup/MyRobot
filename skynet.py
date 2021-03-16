@@ -272,11 +272,8 @@ try:
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:
     stop()
-    GPIO.cleanup()
     print("Exiting")
 
 print('job done')
 stop()
-GPIO.cleanup()
-print("Exiting")
 quit()

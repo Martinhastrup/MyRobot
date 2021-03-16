@@ -70,7 +70,7 @@ def init():
 
 def distance():
     # set Trigger to HIGH
-    init()
+    #init()
     GPIO.output(GPIO_TRIGGER, True)
 
     # set Trigger after 0.01ms to LOW
@@ -99,13 +99,13 @@ def distance():
 
 def forward(x):
     print("Moving Forward")
-    init()
+    #init()
     GPIO.output(M1_forward, GPIO.HIGH)
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.HIGH)
     GPIO.output(M2_backward, GPIO.LOW)
     time.sleep(x)
-    GPIO.cleanup()
+    #GPIO.cleanup()
 
 
 def reverse(x):
@@ -120,24 +120,24 @@ def reverse(x):
 
 def right(x):
     print('Turning right')
-    init()
+    #init()
     GPIO.output(M1_forward, GPIO.HIGH)
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.HIGH)
     time.sleep(x)
-    GPIO.cleanup()
+    #GPIO.cleanup()
 
 
 def left(x):
     print('Turning left')
-    init()
+    #init()
     GPIO.output(M1_forward, GPIO.LOW)
     GPIO.output(M1_backward, GPIO.HIGH)
     GPIO.output(M2_forward, GPIO.HIGH)
     GPIO.output(M2_backward, GPIO.LOW)
     time.sleep(x)
-    GPIO.cleanup()
+    #GPIO.cleanup()
 
 
 def stop():
@@ -146,6 +146,7 @@ def stop():
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.LOW)
+    GPIO.cleanup()
 
 
 def check_movement(mem):

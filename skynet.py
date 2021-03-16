@@ -240,7 +240,7 @@ direction = ''
 turn_time = 1.2
 reverse_time = 1.0
 
-end_time = datetime.now() + timedelta(0, 60)
+end_time = datetime.now() + timedelta(0, 2000)
 now = datetime.now()
 init()
 
@@ -258,7 +258,7 @@ try:
         elif check_movement(memory) == 'turn' or dist <= 25:
             direction = 'TURNING'
             random_turn(turn_time)
-        if rand.randint(0, 25) == 0:
+        if rand.randint(0, 250) == 0:
             print('Exterminate!')
             stop()
             activate_lod(0.2)

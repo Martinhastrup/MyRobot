@@ -275,4 +275,7 @@ except KeyboardInterrupt:
     print("Exiting")
 
 print('job done')
+stop()
+GPIO.cleanup()
+print("Exiting")
 quit()

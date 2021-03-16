@@ -42,8 +42,8 @@ backward_M2 = GPIO.PWM(M2_backward, 100)
 p1 = GPIO.PWM(en1, 100)  # right wheel
 p2 = GPIO.PWM(en2, 100)  # left wheel
 
-p1.start(90)
-p2.start(90)
+p1.start(100)
+p2.start(100)
 
 
 def init():
@@ -239,7 +239,7 @@ direction = ''
 turn_time = 1.2
 reverse_time = 1.0
 
-end_time = datetime.now() + timedelta(0, 10)
+end_time = datetime.now() + timedelta(0, 60)
 now = datetime.now()
 init()
 

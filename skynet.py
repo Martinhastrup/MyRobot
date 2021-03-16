@@ -250,10 +250,10 @@ def activate_lod(x):
 
 memory = []
 direction = ''
-turn_time = 2.0
-reverse_time = 2.0
+turn_time = 1.0
+reverse_time = 1.0
 
-end_time = datetime.now() + timedelta(0, 900)
+end_time = datetime.now() + timedelta(0, 10)
 now = datetime.now()
 init()
 
@@ -261,13 +261,7 @@ try:
     while now <= end_time:
         dist = int(sum([distance() for i in range(5)]) / 5)
         memory.append(dist)
-        forward(1)
-        reverse(1)
-        left(1)
-        right(1)
-        #random_turn(turn_time)
-        activate_lod(0.2)
-        """
+
         if check_movement(memory) == 'go straight' and dist > 25:
             direction = 'FORWARD'
             forward(0.1)
@@ -285,7 +279,7 @@ try:
         if len(memory) > 4:
             memory = memory[-4:]
         now = datetime.now()
-        """
+
 
 
 # If you press CTRL+C, cleanup and stop

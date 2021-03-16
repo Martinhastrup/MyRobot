@@ -105,6 +105,7 @@ def forward(x):
     GPIO.output(M2_forward, GPIO.HIGH)
     GPIO.output(M2_backward, GPIO.LOW)
     time.sleep(x)
+    GPIO.cleanup()
 
 
 def reverse(x):
@@ -119,36 +120,24 @@ def reverse(x):
 
 def right(x):
     print('Turning right')
-    #init()
-    #GPIO.output(M1_forward, False)
-    #GPIO.output(M1_backward, True)
-    #GPIO.output(M2_forward, True)
-    #GPIO.output(M2_backward, False)
-    #p1.ChangeDutyCycle(80)
-    #forward_M1.ChangeDutyCycle(80)
-    #forward_M2.ChangeDutyCycle(0)
-    #p2.ChangeDutyCycle(80)
-    #backward_M1.ChangeDutyCycle(0)
-    #backward_M2.ChangeDutyCycle(80)
-    #GPIO.output(en1, GPIO.HIGH)
-    #GPIO.output(en2, GPIO.HIGH)
-    #p2.ChangeDutyCycle(80)
+    init()
     GPIO.output(M1_forward, GPIO.HIGH)
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.HIGH)
     time.sleep(x)
-    #GPIO.cleanup()
+    GPIO.cleanup()
 
 
 def left(x):
     print('Turning left')
+    init()
     GPIO.output(M1_forward, GPIO.LOW)
     GPIO.output(M1_backward, GPIO.HIGH)
     GPIO.output(M2_forward, GPIO.HIGH)
     GPIO.output(M2_backward, GPIO.LOW)
     time.sleep(x)
-    #GPIO.cleanup()
+    GPIO.cleanup()
 
 
 def stop():
@@ -157,10 +146,7 @@ def stop():
     GPIO.output(M1_backward, GPIO.LOW)
     GPIO.output(M2_forward, GPIO.LOW)
     GPIO.output(M2_backward, GPIO.LOW)
-    #forward_M1.ChangeDutyCycle(0)
-    #forward_M2.ChangeDutyCycle(0)
-    #backward_M1.ChangeDutyCycle(0)
-    #backward_M2.ChangeDutyCycle(0)
+
 
 def check_movement(mem):
     try:

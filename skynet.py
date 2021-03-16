@@ -258,7 +258,7 @@ try:
         elif check_movement(memory) == 'turn' or dist <= 25:
             direction = 'TURNING'
             random_turn(turn_time)
-        if rand.randint(0, 250) == 0:
+        if rand.randint(0, 25) == 0:
             print('Exterminate!')
             stop()
             activate_lod(0.2)
